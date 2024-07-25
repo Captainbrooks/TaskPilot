@@ -1,0 +1,36 @@
+
+ {% extends "base.html" %}
+
+{% block start %}
+  
+
+
+    <div class="container mt-4 border shadow-sm p-3 col-6 mb-5">
+<h2 class="text-danger fw-bold  text-center">Add a Task</h2>
+        <form class="mb-3" method="POST">
+
+            {% csrf_token %}
+
+            <div class="form-group mb-3">
+              <label for="exampleInputEmail1" class="text-danger fw-bold mb-2">Title</label>
+              <input type="text" name="task_title" class="form-control" placeholder="Enter the task" required>
+            </div>
+            <div class="form-group mb-3">
+              <label for="exampleInputPassword1" class="text-danger fw-bold mb-2">Description</label>
+           <textarea name="task_description" class="form-control p-2" cols="5" rows="5" id="" placeholder="task description goes here.." required></textarea>
+            </div>
+            <div class="form-group mb-3">
+              <label for="exampleInputPassword1" class="text-danger fw-bold mb-2">Deadline</label>
+              <input type="date" name="task_deadline" class="form-control" required>
+            </div>
+           <a href="/add-task"> <button type="submit" class="form-control btn btn-success fw-bold">Add Task</button></a>
+          </form>
+
+    </div>
+
+{% endblock %}
+   
+
+
+
+
